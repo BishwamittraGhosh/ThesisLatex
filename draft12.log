@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.11.19)  8 MAY 2017 15:14
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.11.19)  9 MAY 2017 12:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -745,7 +745,35 @@ Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
 \colbreak@box=\box79
 \multicol@sort@counter=\count157
 )
-(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen216
+\captionmargin@=\dimen217
+\captionwidth=\dimen218
+\caption@tempdima=\dimen219
+\caption@indent=\dimen220
+\caption@parindent=\dimen221
+\caption@hangindent=\dimen222
+\abovecaptionskip=\skip62
+\belowcaptionskip=\skip63
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2-> \vskip 10pt \setbox \@
+tempboxa \hbox {\textbf {#1: #2}} \ifdim \wd \@tempboxa >\hsize \textbf {#1: #2
+}\par \else \hbox to\hsize {\hfil \box \@tempboxa \hfil } \fi .
+\c@ContinuedFloat=\count158
+Package caption Info: wrapfig package is loaded.
+) (/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 373.
 Package: cite 2010/09/10  v 5.3
@@ -757,33 +785,33 @@ Package: algpseudocode
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count158
-\c@ALG@rem=\count159
-\c@ALG@nested=\count160
-\ALG@tlm=\skip62
-\ALG@thistlm=\skip63
-\c@ALG@Lnr=\count161
-\c@ALG@blocknr=\count162
-\c@ALG@storecount=\count163
-\c@ALG@tmpcounter=\count164
-\ALG@tmplength=\skip64
+\c@ALG@line=\count159
+\c@ALG@rem=\count160
+\c@ALG@nested=\count161
+\ALG@tlm=\skip64
+\ALG@thistlm=\skip65
+\c@ALG@Lnr=\count162
+\c@ALG@blocknr=\count163
+\c@ALG@storecount=\count164
+\c@ALG@tmpcounter=\count165
+\ALG@tmplength=\skip66
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 ) (./draft12.aux)
 \openout1 = `draft12.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
 
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -820,16 +848,16 @@ LaTeX Font Info:    ... okay on input line 26.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count165
-\scratchdimen=\dimen216
+\scratchcounter=\count166
+\scratchdimen=\dimen223
 \scratchbox=\box80
-\nofMPsegments=\count166
-\nofMParguments=\count167
+\nofMPsegments=\count167
+\nofMParguments=\count168
 \everyMPshowfont=\toks56
-\MPscratchCnt=\count168
-\MPscratchDim=\dimen217
-\MPnumerator=\count169
-\makeMPintoPDFobject=\count170
+\MPscratchCnt=\count169
+\MPscratchDim=\dimen224
+\MPnumerator=\count170
+\makeMPintoPDFobject=\count171
 \everyMPtoPDFconversion=\toks57
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -880,65 +908,102 @@ ABD: EveryShipout initializing macros
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.9} into y
 our preamble.
- on input line 26.
+ on input line 27.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 35.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for U+msa on input line 36.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 35.
+LaTeX Font Info:    Try loading font information for U+msb on input line 36.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 35.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 36.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) (./plot.tex
+)
+(./n_vs_all_small_c=2.tex
 \plotpoint=\box81
 )
-Overfull \hbox (121.35864pt too wide) in paragraph at lines 81--41
+Overfull \hbox (75.76263pt too wide) in paragraph at lines 44--45
  [] 
  []
 
 
-LaTeX Warning: Citation `shen2016socio' on page 1 undefined on input line 45.
+Underfull \hbox (badness 10000) in paragraph at lines 46--46
+[]\OT1/cmr/m/n/9 Figure 1:
+ []
 
 
-Overfull \hbox (6.15256pt too wide) in paragraph at lines 45--46
+Underfull \hbox (badness 10000) in paragraph at lines 46--46
+|\OT1/cmr/m/n/9 eeeeeeeeeeeeeeeeeesmall
+ []
+
+
+Package multicol Warning: Floats and marginpars not allowed inside `multicols' 
+environment!.
+
+(./n_vs_all_small_c=2.tex)
+Overfull \hbox (75.76263pt too wide) in paragraph at lines 52--53
+ [] 
+ []
+
+
+Package multicol Warning: Floats and marginpars not allowed inside `multicols' 
+environment!.
+
+
+Package multicol Warning: Floats and marginpars not allowed inside `multicols' 
+environment!.
+
+(./n_vs_all_small_c=2.tex) (./time_n_vs_all_small_c=2.tex)
+(./time_d_vs_all_node_n=5,c=2.tex) (./d_vs_all_node_n=5,c=2.tex)
+(./c_vs_all_small_n=5.tex) (./time_c_vs_all_small_n=5.tex)
+(./b_n_vs_all_c=1.tex) (./time_b_n_vs_all_c=1.tex) (./b_d_vs_all,n=6,c=3.tex)
+(./time_b_d_vs_all,n=6,c=3.tex) (./b_c_vs_all_n=6.tex)
+(./time_b_c_vs_all_n=6.tex)
+
+LaTeX Warning: Citation `shen2016socio' on page 1 undefined on input line 169.
+
+
+Overfull \hbox (6.15256pt too wide) in paragraph at lines 169--170
 []\OT1/cmr/m/n/9 Social con-nec-tiv-ity over so-cial net-work helps form-ing gr
 oups
  []
 
 
-Overfull \hbox (5.51962pt too wide) in paragraph at lines 45--46
+Overfull \hbox (5.51962pt too wide) in paragraph at lines 169--170
 \OT1/cmr/m/n/9 out-side phys-i-cal world. Lo-ca-tion based ser-vice through sma
 rt-
- []
-
-
-LaTeX Warning: Citation `zhu2014geo' on page 1 undefined on input line 50.
-
-
-LaTeX Warning: Citation `zhu2014geo' on page 1 undefined on input line 50.
-
-
-LaTeX Warning: Citation `yang2012socio' on page 1 undefined on input line 52.
-
-
-LaTeX Warning: Citation `shen2016socio' on page 1 undefined on input line 52.
-
-
-Overfull \hbox (3.11171pt too wide) in paragraph at lines 54--55
-\OT1/cmr/m/n/9 fies min-i-mum ac-quain-tance con-straint within the group. 
  []
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]
-Overfull \hbox (7.01248pt too wide) in paragraph at lines 77--78
+] [2]
+
+LaTeX Warning: Citation `zhu2014geo' on page 3 undefined on input line 174.
+
+
+LaTeX Warning: Citation `zhu2014geo' on page 3 undefined on input line 174.
+
+
+LaTeX Warning: Citation `yang2012socio' on page 3 undefined on input line 176.
+
+
+LaTeX Warning: Citation `shen2016socio' on page 3 undefined on input line 176.
+
+
+Overfull \hbox (3.11171pt too wide) in paragraph at lines 178--179
+\OT1/cmr/m/n/9 fies min-i-mum ac-quain-tance con-straint within the group. 
+ []
+
+
+Overfull \hbox (7.01248pt too wide) in paragraph at lines 201--202
 \OT1/cmr/m/n/9 av-er-age so-cial con-nec-tiv-ity should be ranked higher. 
  []
 
@@ -950,26 +1015,29 @@ Package epstopdf Info: Source file: <drawing2.eps>
 (epstopdf)                    size: 12066 bytes
 (epstopdf)             Command: <repstopdf --outfile=drawing2-eps-converted-to.
 pdf drawing2.eps>
-(epstopdf)             \includegraphics on input line 99.
+(epstopdf)             \includegraphics on input line 223.
 Package epstopdf Info: Output file is already uptodate.
-<drawing2-eps-converted-to.pdf, id=14, 446.66875pt x 451.6875pt>
+<drawing2-eps-converted-to.pdf, id=21, 446.66875pt x 451.6875pt>
 File: drawing2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use drawing2-eps-converted-to.pdf>
-Package pdftex.def Info: drawing2-eps-converted-to.pdf used on input line 99.
+Package pdftex.def Info: drawing2-eps-converted-to.pdf used on input line 223.
 (pdftex.def)             Requested size: 95.99854pt x 97.07645pt.
 
 
-LaTeX Warning: Citation `yang2012socio' on page 2 undefined on input line 106.
+LaTeX Warning: Citation `yang2012socio' on page 3 undefined on input line 230.
 
-[2 <./drawing2-eps-converted-to.pdf>] [3]
+[3] [4 <./drawing2-eps-converted-to.pdf>]
+Underfull \vbox (badness 2302) has occurred while \output is active []
+
+
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 254.
+(amsmath)                trying to recover with `aligned' on input line 378.
 
-\c@Lemma=\count171
+\c@Lemma=\count172
 
-Overfull \hbox (9.31645pt too wide) in paragraph at lines 268--269
+Overfull \hbox (9.31645pt too wide) in paragraph at lines 392--393
 []\OT1/cmr/m/it/9 For any mem-ber $\OML/cmm/m/it/9 v; v [] V[]$\OT1/cmr/m/it/9 
 , if $\OML/cmm/m/it/9 f\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 v; V[]\OT1/cmr/m/n/9 ) \
 OML/cmm/m/it/9 < [][][]$\OT1/cmr/m/it/9 ,
@@ -977,12 +1045,9 @@ OML/cmm/m/it/9 < [][][]$\OT1/cmr/m/it/9 ,
 
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 278.
+(amsmath)                trying to recover with `aligned' on input line 402.
 
-
-Underfull \vbox (badness 2894) has occurred while \output is active []
-
- [4]
+[5]
 Package epstopdf Info: Source file: <connection.eps>
 (epstopdf)                    date: 2017-03-13 01:11:31
 (epstopdf)                    size: 11388 bytes
@@ -991,68 +1056,57 @@ Package epstopdf Info: Source file: <connection.eps>
 (epstopdf)                    size: 6633 bytes
 (epstopdf)             Command: <repstopdf --outfile=connection-eps-converted-t
 o.pdf connection.eps>
-(epstopdf)             \includegraphics on input line 455.
+(epstopdf)             \includegraphics on input line 579.
 Package epstopdf Info: Output file is already uptodate.
-
-<connection-eps-converted-to.pdf, id=44, 489.83pt x 345.29pt>
+ <connection-eps-converted-to.pdf, id=48, 489.83pt x 345.29pt>
 File: connection-eps-converted-to.pdf Graphic file (type pdf)
 
 <use connection-eps-converted-to.pdf>
-Package pdftex.def Info: connection-eps-converted-to.pdf used on input line 455
+Package pdftex.def Info: connection-eps-converted-to.pdf used on input line 579
 .
 (pdftex.def)             Requested size: 72.00073pt x 50.75333pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 456--456
-\OT1/cmr/bx/n/9 cial layer of
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 454--458
+Underfull \hbox (badness 10000) in paragraph at lines 578--582
 []\OT1/cmr/m/n/9 Explanation: Ta-ble  1[] shows dis-tance from
  []
 
-
-Underfull \hbox (badness 1264) in paragraph at lines 458--462
-\OT1/cmr/m/n/9 where Fig-ure 2[] rep-re-sents so-cial
- []
-
-[5 <./connection-eps-converted-to.pdf>]
+[6]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 526.
+(amsmath)                trying to recover with `aligned' on input line 650.
 
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 543.
+(amsmath)                trying to recover with `aligned' on input line 667.
 
 
-Overfull \hbox (5.59923pt too wide) in paragraph at lines 564--564
+Overfull \hbox (5.59923pt too wide) in paragraph at lines 688--688
 []\secfnt PRUNING STRAT-EGY FOR NEXT MEET-
  []
 
-
-Overfull \hbox (7.64362pt too wide) in paragraph at lines 588--588
+[7 <./connection-eps-converted-to.pdf>]
+Overfull \hbox (7.64362pt too wide) in paragraph at lines 712--712
 [] 
  []
 
 
-LaTeX Warning: Float too large for page by 11.58128pt on input line 729.
+LaTeX Warning: Float too large for page by 11.58128pt on input line 853.
 
-(./draft12.bbl [6] [7]) [8
+(./draft12.bbl) [8
 
-] (./draft12.aux)
+] [9] (./draft12.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 21520 strings out of 495028
- 482068 string characters out of 6181496
- 689323 words of memory out of 5000000
- 24244 multiletter control sequences out of 15000+600000
+ 22603 strings out of 495028
+ 501978 string characters out of 6181496
+ 1244323 words of memory out of 5000000
+ 25283 multiletter control sequences out of 15000+600000
  21508 words of font info for 55 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,27n,74p,1534b,669s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,27n,92p,1534b,684s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/f
@@ -1067,13 +1121,14 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
-w/times/utmb8a.pfb>
-Output written on draft12.pdf (8 pages, 247475 bytes).
+onts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
+/times/utmb8a.pfb>
+Output written on draft12.pdf (9 pages, 348855 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
- 85 compressed objects within 1 object stream
+ 128 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

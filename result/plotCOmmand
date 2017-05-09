@@ -1,0 +1,13 @@
+
+set terminal latex 
+set output 'plot.tex'
+set xlabel 'n''
+set ylabel "\\rotatebox{90}{node}" 
+#set xrange [2:6]
+set xtics 1
+#set yrange [0:3000]
+#set ytics 1000
+plot 'result\result' using 1:2 title 'Baseline' with lines, 'result\result' using 1:3 title 'SSTK' with lines, 'result\result' using 1:4 title 'Apprx' with lines
+set output
+set terminal pop
+

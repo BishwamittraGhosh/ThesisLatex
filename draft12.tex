@@ -8,6 +8,7 @@
 		\usepackage{pgfplots}
 		\usepackage{adjustbox}
 		\usepackage{multicol}
+		\usepackage{caption}
 		\usepackage{cite}
 		\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
 		\usepackage{amsmath}
@@ -35,12 +36,46 @@
 	\maketitle
 	
 	
-	\begin {figure}
-	\begin{center}
-	\input{plot.tex}
-	\end{center}
-	\end {figure}
+
 	
+	\begin{multicols}{2}
+	\begin {figure}
+			\begin{center}
+			\scalebox{.5}{\input{n_vs_all_small_c=2.tex}}
+			\end{center}
+			\caption{ small dataset $( c=2, d_m=10) $}
+			\end {figure}
+		    
+	
+	\begin {figure}
+			\begin{center}
+			\scalebox{.5}{\input{n_vs_all_small_c=2.tex}}
+			\end{center}
+			\caption{ small dataset $( c=2, d_m=10) $}
+	\end {figure}
+		
+	
+	
+	\end{multicols}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	\section{Introduction}
 		Social connectivity over social network helps forming groups outside physical world. Location based service through smartphone and other networks helps tracking a person's activity. Now socio spatial group queries are considered where the main purpose is to find a group of  people who are socially connected and are nearby to each others. There are various application of socio spatial group queries. Suppose a shop owner is interested in finding such a group for advertisement (e.g. Groupon )  or an user may want to find a group of friends to watch cinema at weekend.  Socio-spatial group queries for impromptu activity planning have been proposed \cite{shen2016socio}  that considers both social and spatial factors while finding a meet-up location for a fixed size group of nearby people with strong social connections. But fixed size group limits the applicability of socio-spatial queries. Without prior knowledge of the social graphs and user locations, it might be difficult for an advertiser to offer the best deal to users and at the same time maximize their profit. Thus the advertiser may want to know different size of subgroups with various social and spatial constraints. For example, there is a traditional "buy two get one" offer. But advertiser might have found out that, most of the groups are generally of 4 people. So 3 member size group does not come out as a feasible offer. 
 		

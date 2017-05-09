@@ -1,0 +1,90 @@
+
+	\begin {figure}
+		\begin{center}
+		\scalebox{.5}{\input{n_vs_all_small_c=2.tex}}
+		\end{center}
+		\caption{ small dataset $( c=2, d_m=10) $}
+		\end {figure}
+		
+	\begin {figure}
+			\begin{center}
+			\scalebox{.5}{\input{time_n_vs_all_small_c=2.tex}}
+			\end{center}
+			\caption{ small dataset $( c=2, d_m=10) $}
+	\end {figure}
+	
+	
+	\begin {figure}
+		\begin{center}
+		\scalebox{.5}{\input{time_d_vs_all_node_n=5,c=2.tex}}
+		\end{center}
+		\caption{ small dataset $(n'=5, c=2) $}
+		\end {figure}
+		
+	
+		\begin {figure}
+			\begin{center}
+			\scalebox{.5}{\input{d_vs_all_node_n=5,c=2.tex}}
+			\end{center}
+			\caption{ small dataset $(n'=5, c=2) $}
+			\end {figure}	
+	
+		\begin {figure}
+			\begin{center}
+			\scalebox{.5}{\input{c_vs_all_small_n=5.tex}}
+			\end{center}
+			\caption{ small dataset $(n'=5, d_m=10) $}
+		\end {figure}
+		
+		\begin {figure}
+					\begin{center}
+					\scalebox{.5}{\input{time_c_vs_all_small_n=5.tex}}
+					\end{center}
+					\caption{ small dataset $(n'=5, d_m=10) $}
+				\end {figure}
+	\begin {figure}
+			\begin{center}
+					\scalebox{.5}{\input{b_n_vs_all_c=1.tex}}
+					\end{center}
+					\caption{ Bright kite dataset $(c=1, d_m=7) $}
+	\end {figure}
+
+
+	\begin {figure}
+				\begin{center}
+						\scalebox{.5}{\input{time_b_n_vs_all_c=1.tex}}
+						\end{center}
+						\caption{ Bright kite dataset $(c=1, d_m=7) $}
+	\end {figure}	
+	
+	\begin {figure}
+				\begin{center}
+				\scalebox{.5}{\input{b_d_vs_all,n=6,c=3.tex}}
+				\end{center}
+				\caption{ Bright kite dataset $(n'=6, c=3) $}
+	\end {figure}
+	\begin {figure}
+					\begin{center}
+					\scalebox{.5}{\input{time_b_d_vs_all,n=6,c=3.tex}}
+					\end{center}
+					\caption{ Bright kite dataset $(n'=6, c=3) $}
+	\end {figure}
+	
+	\begin {figure}
+			\begin{center}
+			\scalebox{.5}{\input{b_c_vs_all_n=6.tex}}
+			\end{center}
+			\caption{ Bright kite dataset $(n'=6, d_m=7) $}
+	\end {figure}
+	
+	\begin {figure}
+				\begin{center}
+				\scalebox{.5}{\input{time_b_c_vs_all_n=6.tex}}
+				\end{center}
+				\caption{ Bright kite dataset $(n'=6, d_m=7) $}
+	\end {figure}
+	
+	
+	
+	
+	
