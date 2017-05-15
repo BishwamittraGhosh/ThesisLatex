@@ -1,20 +1,315 @@
 run:
-0.532238676071167
+0.5850827255249025
 Members are: 
-10344 10437 7559 7171 638 2807 2826 2903 6903 6909 2955 3081 
-0.5306617513803336
+1 4 9 13 
+0.5692355179786683
 Members are: 
-10344 10437 7559 7171 638 2807 2826 2903 6903 6909 2955 3081 3174 
-0.5272386760711669
+2 3 5 8 
+0.5685827255249023
 Members are: 
-10437 7559 7171 638 2807 2820 2826 2903 6903 6909 2955 3081 
-0.5264309821495643
+1 4 5 13 
+0.5640501197366155
 Members are: 
-10437 7559 7171 638 2807 2820 2826 2903 6903 6909 2955 3081 3174 
-0.5237386779785157
+16 18 6 8 3 10 5 15 13 17 4 7 9 2 14 20 12 
+0.557415403366089
 Members are: 
-10344 10437 7559 7171 638 2807 2826 2903 6909 2955 3081 
-557474
-26007
-BUILD SUCCESSFUL (total time: 27 seconds)
+16 8 3 2 
+25626
+1583
+BUILD SUCCESSFUL (total time: 2 seconds)
+
+
+
+
+
+
+
+ private static boolean findGroup(RestSet vRestSet, IntermediateSet vIntermediateSet,
+        int counter, MeetingPoint mp, int maxDegree, boolean parentIncludedInResult) {
+        totalCalled++;
+        Score s = new Score(vIntermediateSet);
+        int size = vRestSet.getSize() + vIntermediateSet.getSize();
+        while (size >= minimumMember && !vRestSet.isEmpty()) {
+            boolean resultUpdated = false;
+
+            Member m = null;
+            float dMin = 100;
+            int index;
+            if (vRestSet.foundUnvisitedVertex()) {
+                m = vRestSet.topMember();
+                index = vRestSet.getLocalMemberIndex(m);
+                vRestSet.markVisited(index);
+                dMin = vRestSet.getMinimumDistance(index);
+//                System.out.println("member id: " + m.getMemberId() + "  distance : " + dMin + "           index:    " + index);
+
+            } else {
+                return false;
+            }
+
+            if (vIntermediateSet.getSize() < minimumMember) {
+
+                double newCon = vIntermediateSet.connectionIfAdded(m);
+//                double rightSide = (double) (minimumConstraint * vIntermediateSet.getSize()) / (minimumMember - 1.0);
+
+                double rightSide = Math.floor((double) (minimumConstraint * vIntermediateSet.getSize()) / (minimumMember - 1.0));
+                if (newCon >= rightSide) {
+
+                    if (resultLists.size() == topK) {
+                        ResultGroup r = resultLists.get(topK - 1);
+                        double pruningDistance = s.advancePruningDistance(r.getTotalConnectivity(),
+                                r.getGroupSize(), r.getTotalDistance());
+                        if (pruningDistance < (double) dMin * (minimumMember - vIntermediateSet.getSize())) {
+//                            System.out.println("\n\n\n\ntermination advance");
+                            return false;
+                        }
+                    }
+                    vIntermediateSet.addMember(m, dMin);
+                    vRestSet.popMember(index);
+
+                    RestSet newRestSet = new RestSet(vRestSet.getMemberList(),
+                            vRestSet.getDistanceList(), vRestSet.getVisited(), vRestSet.getSize());
+                    IntermediateSet newIntermediateSet = new IntermediateSet(vIntermediateSet.getMemberList(),
+                            vIntermediateSet.getDistanceList(), vIntermediateSet.getMaxFriend(),
+                            vIntermediateSet.getTotalDistance(),
+                            vIntermediateSet.getGroupSize(), vIntermediateSet.getTotalConnectivity());
+//                    System.out.println("before");
+//                    vIntermediateSet.showMemberList();
+                    boolean updated = false;
+                    if (vIntermediateSet.getSize() == minimumMember) {
+                        ResultGroup resultGroup = new ResultGroup(vIntermediateSet.getMemberList(),
+                                vIntermediateSet.getDistanceList(), vIntermediateSet.getTotalDistance(),
+                                vIntermediateSet.getSize(),
+                                vIntermediateSet.getTotalConnectivity(), s.score(), mp);
+                        int minCon = resultGroup.getMinDegree();
+                        if (minCon < minimumConstraint) {
+                            vIntermediateSet.popMember(m, dMin);
+
+//                            System.out.println("\n\n\n\n\n ekhane\n\n\n\n");
+                            //    resultGroup.getMaxDegree();
+                            continue;
+                        }
+                        if (groupFound < topK) {
+                            groupFound++;
+                            updated = true;
+                            resultLists.add(resultGroup);
+                            Collections.sort(resultLists, (a, b) -> b.getIntegerScore().compareTo(a.getIntegerScore()));
+//                            resultGroup.getMaxDegree();
+
+//                            resultGroup.showConnection();
+                        } else {
+                            ResultGroup r = resultLists.get(topK - 1);
+                            if (r.score < resultGroup.score) {
+                                updated = true;
+                                resultLists.remove(topK - 1);
+                                resultLists.add(resultGroup);
+                                Collections.sort(resultLists, (a, b) -> b.getIntegerScore().compareTo(a.getIntegerScore()));
+//                                resultGroup.getMaxDegree();
+//                                resultGroup.showConnection();
+                            }
+
+                        }
+
+                    }
+
+                    boolean b = findGroup(newRestSet, newIntermediateSet, counter + 1, mp, maxDegree, updated);
+                    //System.out.println("counter "+counter);
+
+                    vIntermediateSet.popMember(m, dMin);
+//                    System.out.println("after");
+//                    vIntermediateSet.showMemberList();
+
+                } else {
+//                    System.out.println("bad");
+                }
+            } else {
+
+                //FOR PREVIOUS GROUP
+//                System.out.println("over");
+                int newCon = vIntermediateSet.connectionIfAdded(m);
+//                System.out.println(newCon);
+//                System.out.println(minimumConstraint);
+
+                if (newCon >= minimumConstraint) {
+
+                    //NO CHECKING FOR TERMINATION......
+                    if (groupFound < topK) {
+//                        System.out.println("\nmember kom\n");
+                        vIntermediateSet.addMember(m, dMin);
+                        vRestSet.popMember(index);
+
+                        RestSet newRestSet = new RestSet(vRestSet.getMemberList(),
+                                vRestSet.getDistanceList(), vRestSet.getVisited(), vRestSet.getSize());
+                        IntermediateSet newIntermediateSet = new IntermediateSet(vIntermediateSet.getMemberList(),
+                                vIntermediateSet.getDistanceList(), vIntermediateSet.getMaxFriend(),
+                                vIntermediateSet.getTotalDistance(),
+                                vIntermediateSet.getGroupSize(), vIntermediateSet.getTotalConnectivity());
+//                        System.out.println("before");
+//                        vIntermediateSet.showMemberList();
+
+                        ResultGroup resultGroup = new ResultGroup(vIntermediateSet.getMemberList(),
+                                vIntermediateSet.getDistanceList(), vIntermediateSet.getTotalDistance(),
+                                vIntermediateSet.getSize(),
+                                vIntermediateSet.getTotalConnectivity(), s.score(), mp);
+
+                        groupFound++;
+                        resultLists.add(resultGroup);
+                        Collections.sort(resultLists, (a, b) -> b.getIntegerScore().compareTo(a.getIntegerScore()));
+//                        resultGroup.getMaxDegree();
+
+                        findGroup(newRestSet, newIntermediateSet, counter + 1, mp, maxDegree, true);
+                        //System.out.println("counter "+counter);
+
+                        vIntermediateSet.popMember(m, dMin);
+//                        System.out.println("after");
+//                        vIntermediateSet.showMemberList();
+                        continue;
+                    }
+
+                    if (parentIncludedInResult) {
+//                        System.out.println("\n baap included hoise\n");
+                        vIntermediateSet.addMember(m, dMin);
+                        vRestSet.popMember(index);
+
+                        RestSet newRestSet = new RestSet(vRestSet.getMemberList(),
+                                vRestSet.getDistanceList(), vRestSet.getVisited(), vRestSet.getSize());
+                        IntermediateSet newIntermediateSet = new IntermediateSet(vIntermediateSet.getMemberList(),
+                                vIntermediateSet.getDistanceList(), vIntermediateSet.getMaxFriend(),
+                                vIntermediateSet.getTotalDistance(),
+                                vIntermediateSet.getGroupSize(), vIntermediateSet.getTotalConnectivity());
+//                        System.out.println("before");
+//                        vIntermediateSet.showMemberList();
+
+                        ResultGroup resultGroup = new ResultGroup(vIntermediateSet.getMemberList(),
+                                vIntermediateSet.getDistanceList(), vIntermediateSet.getTotalDistance(),
+                                vIntermediateSet.getSize(),
+                                vIntermediateSet.getTotalConnectivity(), s.score(), mp);
+                        ResultGroup r = resultLists.get(topK - 1);
+                        boolean updated = false;
+                        if (r.score < resultGroup.score) {
+                            resultLists.remove(topK - 1);
+                            updated = true;
+                            resultLists.add(resultGroup);
+                            Collections.sort(resultLists, (a, b) -> b.getIntegerScore().compareTo(a.getIntegerScore()));
+//                            resultGroup.getMaxDegree();
+                        }
+
+                        findGroup(newRestSet, newIntermediateSet, counter + 1, mp, maxDegree, updated);
+
+                        vIntermediateSet.popMember(m, dMin);
+//                        System.out.println("after");
+//                        vIntermediateSet.showMemberList();
+
+                    } else {
+
+//                        System.out.println("\n baap included hoini **************\n");
+                        double terminatingDistance = s.getDistanceTermination(maxDegree);
+//                        System.out.println("terminating distance: " + terminatingDistance);
+
+                        if (dMin > terminatingDistance) {
+//                            System.out.println("termination due to distance upper bound");
+                            return false;
+                        }
+//                        System.out.println("upper distance for member: " + s.getUpperDistanceForMember());
+                        if (dMin < s.getUpperDistanceForMember()) {
+//                            System.out.println("distance lemma");
+
+                            vIntermediateSet.addMember(m, dMin);
+                            vRestSet.popMember(index);
+
+                            RestSet newRestSet = new RestSet(vRestSet.getMemberList(),
+                                    vRestSet.getDistanceList(), vRestSet.getVisited(), vRestSet.getSize());
+                            IntermediateSet newIntermediateSet = new IntermediateSet(vIntermediateSet.getMemberList(),
+                                    vIntermediateSet.getDistanceList(), vIntermediateSet.getMaxFriend(),
+                                    vIntermediateSet.getTotalDistance(),
+                                    vIntermediateSet.getGroupSize(), vIntermediateSet.getTotalConnectivity());
+//                            System.out.println("before");
+//                            vIntermediateSet.showMemberList();
+
+                            ResultGroup resultGroup = new ResultGroup(vIntermediateSet.getMemberList(),
+                                    vIntermediateSet.getDistanceList(), vIntermediateSet.getTotalDistance(),
+                                    vIntermediateSet.getSize(),
+                                    vIntermediateSet.getTotalConnectivity(), s.score(), mp);
+                            ResultGroup r = resultLists.get(topK - 1);
+                            boolean updated = false;
+                            if (r.score < resultGroup.score) {
+                                resultLists.remove(topK - 1);
+                                updated = true;
+                                resultLists.add(resultGroup);
+                                Collections.sort(resultLists, (a, b) -> b.getIntegerScore().compareTo(a.getIntegerScore()));
+//                                resultGroup.getMaxDegree();
+                            }
+
+                            findGroup(newRestSet, newIntermediateSet, counter + 1, mp, maxDegree, updated);
+
+                            vIntermediateSet.popMember(m, dMin);
+//                            System.out.println("after");
+//                            vIntermediateSet.showMemberList();
+                            continue;
+                        }
+
+                        double conLower = s.getLowerBoundOnConnection(dMin);
+//                        System.out.println("connection lower for user: " + conUpper);
+
+                        if ((float) 2 * newCon >= conLower) {
+//                            System.out.println("connection Lemma");
+
+                            vIntermediateSet.addMember(m, dMin);
+                            vRestSet.popMember(index);
+                            RestSet newRestSet = new RestSet(vRestSet.getMemberList(),
+                                    vRestSet.getDistanceList(), vRestSet.getVisited(), vRestSet.getSize());
+                            IntermediateSet newIntermediateSet = new IntermediateSet(vIntermediateSet.getMemberList(),
+                                    vIntermediateSet.getDistanceList(), vIntermediateSet.getMaxFriend(),
+                                    vIntermediateSet.getTotalDistance(),
+                                    vIntermediateSet.getGroupSize(), vIntermediateSet.getTotalConnectivity());
+//                            System.out.println("before");
+//                            vIntermediateSet.showMemberList();
+
+                            ResultGroup resultGroup = new ResultGroup(vIntermediateSet.getMemberList(),
+                                    vIntermediateSet.getDistanceList(), vIntermediateSet.getTotalDistance(),
+                                    vIntermediateSet.getSize(),
+                                    vIntermediateSet.getTotalConnectivity(), s.score(), mp);
+                            ResultGroup r = resultLists.get(topK - 1);
+                            boolean updated = false;
+                            if (r.score < resultGroup.score) {
+                                resultLists.remove(topK - 1);
+                                updated = true;
+                                resultLists.add(resultGroup);
+                                Collections.sort(resultLists, (a, b) -> b.getIntegerScore().compareTo(a.getIntegerScore()));
+                                //                  resultGroup.getMaxDegree();
+                            }
+
+                            findGroup(newRestSet, newIntermediateSet, counter + 1, mp, maxDegree, updated);
+
+                            vIntermediateSet.popMember(m, dMin);
+//                            System.out.println("after");
+//                            vIntermediateSet.showMemberList();
+
+                        } else {
+//                            System.out.println("nothing");
+
+                            //JUST CHECKING IF ANY PRUNING CAN BE DONE
+                            int maxDeg = vRestSet.getMaxDegree();
+//                            System.out.println((double) 2.0 * maxDeg + "  <  " + conUpper);
+
+                            if ((double) 2.0 * maxDeg < conLower) {
+                                adP++;
+//                                System.out.println("termination due to connection loweer bound");
+
+                                return false;
+                            }
+                        }
+
+                    }
+
+                } else {
+//                    System.out.println("excluded for connection");
+
+                }
+
+            }
+        }
+//        System.out.println("amni return");
+        return false;
+
+    }
 
